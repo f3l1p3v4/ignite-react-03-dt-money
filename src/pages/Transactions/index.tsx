@@ -1,14 +1,19 @@
 import { useContextSelector } from 'use-context-selector'
-import { Header } from '../../components/Header'
-import { Summary } from '../../components/Summary'
+
+import { GithubLogo } from '@phosphor-icons/react'
+
 import { TransactionsContext } from '../../contexts/TransactionsContext'
 import { dateFormatter, priceFormatter } from '../../utils/formatter'
+
+import { Header } from '../../components/Header'
+import { Summary } from '../../components/Summary'
 import { SearchForm } from './components/SearchForm'
 
 import {
   PriceHighlight,
   TransactionsContainer,
   TransactionsTable,
+  LinkCode
 } from './styles'
 
 export function Transactions() {
@@ -46,6 +51,10 @@ export function Transactions() {
           </tbody>
         </TransactionsTable>
       </TransactionsContainer>
+      <LinkCode href='https://github.com/f3l1p3v4/ignite-react-03-dt-money' >
+        <GithubLogo />
+        Ver Código
+      </LinkCode>
     </div>
   )
 }
