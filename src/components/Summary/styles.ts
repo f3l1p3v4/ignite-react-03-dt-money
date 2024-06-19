@@ -11,6 +11,11 @@ export const SummaryContainer = styled.section`
   gap: 2rem;
 
   margin-top: -5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
 `
 
 interface SummaryCardProps {
@@ -22,17 +27,32 @@ export const SummaryCard = styled.div<SummaryCardProps>`
   border-radius: 6px;
   padding: 2rem;
 
+
+  @media (max-width: 768px) {
+    padding: 0.6rem;
+  }
+
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: ${(props) => props.theme['gray-300']};
+
+
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+    }
   }
 
   strong {
     display: block;
     margin-top: 1rem;
     font-size: 2rem;
+
+    @media (max-width: 768px) {
+      margin-top: 0.4rem;
+      font-size: 1rem;
+    }
   }
 
   ${(props) =>
