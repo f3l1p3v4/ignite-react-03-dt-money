@@ -17,16 +17,24 @@ export const TransactionsTable = styled.table`
   border-spacing: 0 0.5rem;
   margin-top: 1.5rem;
 
+  tr {
+    @media (max-width: 768px) {
+      padding: 0.8rem 0.8rem;
+      font-size: 0.7rem;
+    }
+  }
+
   td {
     padding: 1.25rem 2rem;
     background: ${(props) => props.theme['gray-700']};
 
     @media (max-width: 768px) {
-      padding: 0.6rem 0.4rem;
-      font-size: 0.7rem;
+      padding: 0.8rem 0.4rem;
+      font-size: 0.775rem;
     }
 
     &:first-child {
+      padding: 0.8rem 0.4rem 0.8rem 0.8rem;
       border-top-left-radius: 6px;
       border-bottom-left-radius: 6px;
     }
@@ -34,6 +42,12 @@ export const TransactionsTable = styled.table`
     &:last-child {
       border-top-right-radius: 6px;
       border-bottom-right-radius: 6px;
+    }
+
+    p {
+      font-size: 0.6rem;
+      opacity: 0.8;
+      margin-bottom: 5px;
     }
   }
 `

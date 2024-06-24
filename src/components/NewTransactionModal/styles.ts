@@ -8,6 +8,13 @@ export const Overlay = styled(Dialog.Overlay)`
   height: 100vh;
   inset: 0;
   background: rgba(0, 0, 0, 0.75);
+
+
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 1rem;
+    }
+  }
 `
 
 export const Content = styled(Dialog.Content)`
@@ -21,12 +28,23 @@ export const Content = styled(Dialog.Content)`
   left: 50%;
   transform: translate(-50%, -50%);
 
+  @media (max-width: 768px) {
+    min-width: 20rem;
+    width: auto;
+    height: auto;
+    padding: 2.5rem 1.5rem;
+  }
+
   form {
     margin-top: 2rem;
 
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    @media (max-width: 768px) {
+      gap: 0.5rem;
+    }
 
     input {
       border-radius: 6px;
@@ -35,8 +53,18 @@ export const Content = styled(Dialog.Content)`
       color: ${(props) => props.theme['gray-300']};
       padding: 1rem;
 
+      @media (max-width: 768px) {
+        font-size: 0.8rem;
+        padding: 0.8rem;
+      }
+
       &::placeholder {
         color: ${(props) => props.theme['gray-500']};
+      }
+
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 2px ${(props) => props.theme['green-500']};
       }
     }
 
@@ -50,6 +78,12 @@ export const Content = styled(Dialog.Content)`
       border-radius: 6px;
       margin-top: 1.25rem;
       cursor: pointer;
+
+
+      @media (max-width: 768px) {
+        height: 41px;
+        font-size: 0.8rem;
+      }
 
       &:disabled {
         opacity: 0.6;
@@ -73,6 +107,11 @@ export const CloseButton = styled(Dialog.Close)`
   line-height: 0;
   cursor: pointer;
   color: ${(props) => props.theme['gray-500']};
+
+  @media (max-width: 768px) {
+    top: 1.2rem;
+  }
+
 `
 
 export const TransactionType = styled(RadioGroup.Root)`
@@ -80,6 +119,10 @@ export const TransactionType = styled(RadioGroup.Root)`
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-top: 0.5rem;
+
+  @media (max-width: 768px) {
+    gap: 0.5rem;
+  }
 `
 
 interface TransactionTypeButtonProps {
@@ -100,11 +143,22 @@ export const TransactionTypeButton = styled(
   border: 0;
   color: ${(props) => props.theme['gray-300']};
 
+  @media (max-width: 768px) {
+    gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.8rem;
+    height: 42px;
+  }
+
   svg {
     color: ${(props) =>
       props.variant === 'income'
         ? props.theme['green-300']
         : props.theme['red-300']};
+      
+      @media (max-width: 768px) {
+        width: 20px;
+      }
   }
 
   &[data-state='unchecked']:hover {
